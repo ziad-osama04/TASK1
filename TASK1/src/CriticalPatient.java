@@ -3,14 +3,15 @@ public class CriticalPatient{
     private double waitingTime;
     private double treatmentTime;
     private double departureTime;
-    int priority;
+    int priority; // 0 normal or 1 critical
     private double arrivalTime;
-    CriticalPatient(int patientId, double arrivalTime,double treatmentTime,double departureTime,int priority){
+    CriticalPatient(int patientId, double arrivalTime,int priority){
         this.patientId = patientId;
         this.arrivalTime = arrivalTime;
         this.priority = priority;
         this.treatmentTime = 0;
         this.departureTime = 0;
+        this.waitingTime = 0;
     }
 
     public double getArrivalTime() {
@@ -43,6 +44,14 @@ public class CriticalPatient{
 
     public void setDepartureTime(double departureTime) {
         this.departureTime = departureTime;
+    }
+
+    public void setWaitingTime(double waitingTime) {
+        this.waitingTime = waitingTime;
+    }
+
+    public double getWaitingTime() {
+        return waitingTime;
     }
 
     public void displayInfo() {
