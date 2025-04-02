@@ -20,7 +20,7 @@ public class PriorityQueue {
         while(temp.next != null && temp.next.patient.priority >= patient.priority){
             temp = temp.next;
         }
-        new_node.next = temp;
+        new_node.next = temp.next;
         temp.next = new_node;
     }
 
