@@ -63,7 +63,7 @@ public class CriticalPatient {
     }
 
     public void displayInfo() {
-        System.out.println("PatientID " + patientId +
+        System.out.println("PatientID  " + patientId +
                          ", Arrival Time: " + arrivalTime +
                 ", Waiting Time: " + waitingTime +
                 ", Treatment Time: " + treatmentTime +

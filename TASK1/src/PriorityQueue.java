@@ -9,7 +9,7 @@ public class PriorityQueue {
         this.tail = null;
 
     }
-    public void enqueue(CriticalPatient patient){
+    public void enqueue(CriticalPatient  patient){
         PNode new_node = new PNode(patient);
         if(head == null || patient.priority > head.patient.priority){
             new_node.next = head;
