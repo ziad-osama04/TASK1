@@ -26,13 +26,14 @@ public class PriorityQueue {
     }
     }
 
-    public void dequeue(){
+    public CriticalPatient  dequeue(){
         if (isEmpty()){
             throw new IllegalArgumentException("Queue is empty");
         }
         else{
             this.head = this.head.next;
         }
+        return head.patient;
     }
 
     public int peek(){

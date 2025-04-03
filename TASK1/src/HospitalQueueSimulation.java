@@ -1,8 +1,8 @@
 import java.util.Random;
 
 public class HospitalQueueSimulation {
-    public static void main(String[] args) {
- /*        Random rand = new Random();
+     public static void main(String[] args) {
+        /*        Random rand = new Random();
         for (int i = 1; i <= 5; i++) {
             double arrivalTime = Queue.getPoissonRandom(5);
 
@@ -26,27 +26,30 @@ for (int i = 0; i < numPatients; i++) {
     int priority = rand.nextInt(2); // 0 = Normal, 1 = Critical
 
     CriticalPatient patient = new CriticalPatient(i + 1, arrivalTime, priority);
-    patient.treatmentTime = serviceTime;
+    patient.setServiceTime(serviceTime) ;
     queue.enqueue(patient);
         }
         double currentTime = 0;
         int index = 0;
         while (!queue.isEmpty()) {
             CriticalPatient patient = queue.dequeue();
-            if (currentTime < patient.arrivalTime) {
-                currentTime = patient.arrivalTime;
+            if (currentTime < patient.getArrivalTime()) {
+                currentTime = patient.getArrivalTime();
             }
 
-            patient.waitingTime = currentTime - patient.arrivalTime;
-            currentTime += patient.treatmentTime;
-            patient.departureTime = currentTime;
+            patient.setWaitingTime(currentTime - patient.getArrivalTime());  // Calculate waiting time
+
+            currentTime += patient.getServiceTime();   // Update current time with service time
+            patient.setDepartureTime(currentTime ); // Calculate departure time
 
             // Store data in arrays
-            arrivalTimes[index] = patient.arrivalTime;
-            waitingTimes[index] = patient.waitingTime;
-            serviceTimes[index] = patient.treatmentTime;
-            departureTimes[index] = patient.departureTime;
+            arrivalTimes[index] = patient.getArrivalTime();
+            waitingTimes[index] = patient.getWaitingTime();
+            serviceTimes[index] = patient.getServiceTime();
+            departureTimes[index] = patient.getDepartureTime();
             index++;
+
+          
 
             patient.displayInfo();
         }

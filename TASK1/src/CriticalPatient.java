@@ -1,4 +1,5 @@
-public class CriticalPatient{
+
+public class CriticalPatient {
     int patientId;
     private double waitingTime;
     private double treatmentTime;
@@ -14,6 +15,13 @@ public class CriticalPatient{
         this.waitingTime = 0;
     }
 
+    public double geTreatmentTime() {
+        return treatmentTime;
+    }
+
+    public void setTreatmentTime(double treatmentTime) {
+        this.treatmentTime = treatmentTime;
+    }
     public double getArrivalTime() {
         return arrivalTime;
     }
@@ -55,7 +63,7 @@ public class CriticalPatient{
     }
 
     public void displayInfo() {
-        System.out.println("PatientID" + patientId +
+        System.out.println("PatientID " + patientId +
                          ", Arrival Time: " + arrivalTime +
                 ", Waiting Time: " + waitingTime +
                 ", Treatment Time: " + treatmentTime +
@@ -63,3 +71,4 @@ public class CriticalPatient{
                  ", Priority: " + (priority == 1 ? "Critical" : "Normal"));
     }
 }
+
