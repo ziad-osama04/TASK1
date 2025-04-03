@@ -55,8 +55,11 @@ public class CriticalPatient{
     }
 
     public void displayInfo() {
-        System.out.println("PatientID" + patientId + ", Arrival Time: " + arrivalTime +
+        System.out.println("PatientID" + patientId +
+                         ", Arrival Time: " + arrivalTime +
                 ", Waiting Time: " + waitingTime +
-                ", Treatment Time: " + treatmentTime + ", Departure Time: " + departureTime);
+                ", Treatment Time: " + treatmentTime +
+                 ", Departure Time: " + departureTime+
+                 ", Priority: " + (priority == 1 ? "Critical" : "Normal"));
     }
 }

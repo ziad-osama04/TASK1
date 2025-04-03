@@ -15,6 +15,7 @@ public class PriorityQueue {
             new_node.next = head;
             head = new_node;
         }
+        else{
 
         PNode temp = head;
         while(temp.next != null && temp.next.patient.priority >= patient.priority){
@@ -22,6 +23,7 @@ public class PriorityQueue {
         }
         new_node.next = temp.next;
         temp.next = new_node;
+    }
     }
 
     public void dequeue(){
